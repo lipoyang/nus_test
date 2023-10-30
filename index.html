@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <title>NUS(Nordic UART Service) Test</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div class="container" style="max-width: 400px">
+      <!-- (1) 接続画面 -->
+      <div id="panel_connect">
+        <div class="row m-2">
+          <div class="col text-center"><h1>NUS Test</h1></div>
+        </div>
+        <div class="row my-4">
+          <div class="col mx-4"><div class="d-grid gap-2">
+            <button id="btn_connect" class="btn btn-primary btn-block rounded-pill">接続</button>
+          </div></div>
+        </div>
+        <div class="row" style="font-size: 1.2rem">
+          <div class="col text-center" id="text_connect"></div>
+        </div>
+      </div>
+      <!-- (2) メイン画面 -->
+      <div id="panel_main" style="display:none">
+        <!-- 送信 -->
+        <div class="row mt-4 mb-2">
+          <div class="col mx-4"><div class="d-grid gap-2">
+          送信する文字列
+          </div></div>
+        </div>
+        <div class="row mt-0 mb-3">
+          <div class="col mx-4"><div class="d-grid gap-2">
+            <textarea id="text_tx" rows="1"></textarea>
+          </div></div>
+        </div>
+        <div class="row mt-0 mb-0">
+          <div class="col mx-4"><div class="d-grid gap-2">
+            <button id="btn_send" class="btn btn-primary btn-block rounded-pill">送信</button>
+          </div></div>
+        </div>
+        <!-- 受信 -->
+        <div class="row mt-4 mb-2">
+          <div class="col mx-4"><div class="d-grid gap-2">
+          受信した文字列
+          </div></div>
+        </div>
+        <div class="row mt-0 mb-3">
+          <div class="col mx-4"><div class="d-grid gap-2">
+            <textarea id="text_rx" rows="8" readonly></textarea>
+          </div></div>
+        </div>
+        <div class="row mt-0 mb-0">
+          <div class="col mx-4"><div class="d-grid gap-2">
+            <button id="btn_clear" class="btn btn-primary btn-block rounded-pill">クリア</button>
+          </div></div>
+        </div>
+        <!-- 切断 -->
+        <div class="row mt-4 mb-0">
+          <div class="col mx-4"><div class="d-grid gap-2">
+            <button id="btn_disconnect" class="btn btn-primary btn-block rounded-pill">切断</button>
+          </div></div>
+        </div>
+      </div> <!-- (2) メイン画面 -->
+    </div> <!-- div class="container" -->
+
+    <!-- スクリプト -->
+    <script src="nus_test.js"></script>
+  </body>
+</html>
